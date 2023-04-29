@@ -1,0 +1,38 @@
+Hive DDL Commands
+
+Create Database Statement
+
+hive> CREATE SCHEMA userdb;  
+hive> SHOW DATABASES;  
+
+
+Drop database
+hive> DROP DATABASE IF EXISTS userdb;  
+
+Creating Hive Tables
+hive> CREATE TABLE Sonoo(foo INT, bar STRING);  
+
+Browse the table
+hive>  Show tables;  
+
+Altering and Dropping Tables
+ALTER TABLE Sonoo RENAME TO Kafka;  
+hive> ALTER TABLE Kafka ADD COLUMNS (col INT);  
+hive> ALTER TABLE HIVE_TABLE ADD COLUMNS (col1 INT COMMENT 'a comment');  
+----------------------------------------------------------------------------
+Hive DML Commands
+
+LOAD DATA
+hive> LOAD DATA LOCAL INPATH './usr/Desktop/kv1.txt' OVERWRITE INTO TABLE Employee;  
+
+SELECTS and FILTERS
+hive> SELECT  E.EMP_ID FROM Employee E  WHERE E.Address='US';  
+
+GROUP BY
+hive> hive> SELECT  E.EMP_ID FROM Employee E GROUP BY E.Addresss;  
+
+Sort by
+hive> SELECT  E.EMP_ID FROM Employee E SORT BY E.empid;
+
+Order by
+hive> SELECT  E.EMP_ID FROM Employee E order BY E.empid;  
